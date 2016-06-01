@@ -5,17 +5,10 @@
     <title>How many steps?</title>
     <script type="text/javascript" src="./jquery.min.js"></script>
     <script type="text/javascript" src="./jquery.maphilight.js"></script>
+    <script type="text/javascript" src="./regions.js"></script>
     <script type="text/javascript" src="./adjacencylist.js"></script>
     <script type="text/javascript" src="./mapalgos.js"></script>
-    <script type="text/javascript">
-    $(function() {
-      $(".map").maphilight();
-      $("#startingArea").trigger("mouseover");
-      $("area").click(function() {
-        drawDistances(distances($(this).attr("title")));
-      });
-    });
-    </script>
+    <script type="text/javascript" src="./onload.js"></script>
     <style>
       area { cursor: pointer; }
     </style>
