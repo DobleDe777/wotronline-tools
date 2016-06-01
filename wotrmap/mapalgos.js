@@ -69,8 +69,12 @@ console.log(distances);
       } else if(i%5 == 3) {
         color = "00ffff";
       }
-      var maphilightvalue = '{"stroke":false,"fillColor":"' + color + '","fillOpacity":0.3}'
-      $("area[title='" + distances[i][j] + "']").attr("data-maphilight", maphilightvalue);
+
+      var data = $("area[title='" + distances[i][j] + "']").data('maphilight') || {};
+      data.stroke = false;
+      data.fillColor = color;
+      data.fillOpacity = 0.3;
+      $("area[title='" + distances[i][j] + "']").data('maphilight', data);
     }
   }
 
