@@ -84,6 +84,11 @@ function distances(regionName) {
 
 function toggleBlock(regionName) {
   var regionNumber = findRegion(regionName);
+
+  if(adjacencyList[regionNumber][0] == lastDrawn) {
+    throw "Blocking Current Region";
+  }
+  
   blockedRegions[regionNumber] = !blockedRegions[regionNumber];
   var data = $("area[title='" + adjacencyList[regionNumber][0] + "']").data('maphilight') || {};
   data.stroke = false;
